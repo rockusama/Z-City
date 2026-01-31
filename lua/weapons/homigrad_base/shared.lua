@@ -1729,6 +1729,8 @@ function SWEP:GetAdditionalValues()
 	end
 
 	local skillissue = ply.organism and ply.organism.recoilmul or 1
+
+
 	local speed_add = math.Clamp(1 / skillissue,0.5,1.5)
 	
 	if not suiciding and !self.norecoil then
