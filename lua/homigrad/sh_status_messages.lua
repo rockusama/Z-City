@@ -40,6 +40,7 @@ local sharp_pain = {
 	"AAAaaAa",
 	"AaaAAaghf",
 	"aaAaaAaff",
+	"aaahhh",
 	"AAAaaGHHH",
 	"AAAaaAAHH",
 	"AAAaaAAAAAaGHHHH",
@@ -160,7 +161,7 @@ local dislocated_limb = {
 	"I have to get this bone back in.",
 	"No... I have to move it back in place.",
 	"It just hurts so much there. I might need a check up.",
-	"It's either I move it back into place or ask someone else to do it for me."
+	"My limb is out of place.",
 }
 
 local hungry_a_bit = {
