@@ -20,8 +20,9 @@ local function IsInvalidName(name)
 		if not table.HasValue(allowed, utf8.GetChar(name, k)) then return true end
 	end
 
-	local ret = hook.Run("ZCity_CanUseName", name)
+	local ret = hook.Run("ZB_IsInvalidName", name)
 	if ret ~= nil then return ret end
+
 	return false
 end
 
