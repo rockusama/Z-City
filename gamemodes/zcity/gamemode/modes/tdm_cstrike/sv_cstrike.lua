@@ -8,6 +8,24 @@ MODE.Rounds = 5
 
 MODE.ROUND_TIME = 240
 
+MODE.ForBigMaps = false -- if it can launch, then it doesn't really matter
+
+MODE.CooldownRounds = 5 -- 5 rounds of cs, 5 rounds without cs (at least 5)
+
+function MODE:ChanceFunction(info)
+    if info.rounds then
+        for i = #info.rounds, #info.rounds - self.CooldownRounds + 1, -1 do
+            if info.rounds[i] == self.name then
+                return 0
+            else
+                continue
+            end
+        end
+    end
+
+    return self.Chance
+end
+
 util.AddNetworkString("zb_cs_round_intermission")
 
 function MODE:DontKillPlayer(ply)
