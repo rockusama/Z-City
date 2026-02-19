@@ -35,7 +35,7 @@ zb.modesHooks = {}
 zb.modes = zb.modes or {}
 
 local function InitMode()
-	if table.IsEmpty(MODE) then continue end
+	if table.IsEmpty(MODE) then return end
 
 	local name = MODE.name
 	local saved = zb.modes[name] and zb.modes[name].saved or {} -- saved table is used for saving data between hot reloads
