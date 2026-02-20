@@ -2,7 +2,7 @@ ZC_CLOTHES_SLOT_TORSO = 0
 ZC_CLOTHES_SLOT_PANTS = 1
 ZC_CLOTHES_SLOT_BOOTS = 2
 ZC_CLOTHES_SLOT_BACKPACK = 3
-
+-- if you really want this NOW https://steamcommunity.com/sharedfiles/filedetails/?id=3670069780
 local clothes = {
     wintercoat1 = {
         PrintName = "Winter Coat 1",
