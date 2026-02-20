@@ -234,9 +234,9 @@ end
             local Cloth = Clothes[i]
             if !IsValid(Cloth) then continue end
             if !Cloth.WarmSave then continue end
-            MaxWarmMul = MaxWarmMul + (Cloth.WarmSave / 2.5)
+            MaxWarmMul = MaxWarmMul + (Cloth.WarmSave / 1.5)
             changeRate = changeRate * math.max(1 - Cloth.WarmSave, 0.1)
-            warmLoseMul = warmLoseMul * math.max(1 - Cloth.WarmSave, 0.1)
+            --warmLoseMul = warmLoseMul * math.max(1 - Cloth.WarmSave / 2.5, 0.1)
         end
 
         return changeRate, MaxWarmMul, warmLoseMul
