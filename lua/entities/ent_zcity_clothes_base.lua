@@ -110,6 +110,7 @@ end
         self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
         self:AddSolidFlags(FSOLID_NOT_SOLID)
         self:SetSolid(SOLID_NONE)
+        self:AddEFlags(EFL_KEEP_ON_RECREATE_ENTITIES)
 
         self:OnWear(entUser)
     end
@@ -136,6 +137,7 @@ end
         self:SetCollisionGroup(COLLISION_GROUP_NONE)
         self:RemoveSolidFlags(FSOLID_NOT_SOLID)
         self:SetSolid(SOLID_VPHYSICS)
+        self:RemoveEFlags(EFL_KEEP_ON_RECREATE_ENTITIES)
 
         self.WearOwner = nil
 
