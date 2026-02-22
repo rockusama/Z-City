@@ -94,6 +94,7 @@ end
         if !bDontChangeMaterials then
             for k,v in ipairs(data.HideSubMaterails) do
                 local mat = entUser:GetSubMaterialIdByName(v)
+                if !mat then continue end
                 self.OldSubMaterials = self.OldSubMaterials or {}
                 self.OldSubMaterials[mat] = entUser:GetSubMaterial(mat)
 
@@ -173,6 +174,7 @@ end
             if data.ModelSubMaterials then
                 for k,v in pairs(data.ModelSubMaterials) do
                     local id = model:GetSubMaterialIdByName(k)
+                    if !id then continue end
                     model:SetSubMaterial(id, v)
                 end
             end
