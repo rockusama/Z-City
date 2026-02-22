@@ -94,6 +94,7 @@ end
         if !bDontChangeMaterials then
             for k,v in ipairs(data.HideSubMaterails) do
                 local mat = entUser:GetSubMaterialIdByName(v)
+                if !mat then continue end
                 self.OldSubMaterials = self.OldSubMaterials or {}
                 self.OldSubMaterials[mat] = entUser:GetSubMaterial(mat)
 
@@ -110,6 +111,7 @@ end
         self:SetCollisionGroup(COLLISION_GROUP_DEBRIS)
         self:AddSolidFlags(FSOLID_NOT_SOLID)
         self:SetSolid(SOLID_NONE)
+        self:AddEFlags(EFL_KEEP_ON_RECREATE_ENTITIES)
 
         self:OnWear(entUser)
     end
@@ -136,6 +138,7 @@ end
         self:SetCollisionGroup(COLLISION_GROUP_NONE)
         self:RemoveSolidFlags(FSOLID_NOT_SOLID)
         self:SetSolid(SOLID_VPHYSICS)
+        self:RemoveEFlags(EFL_KEEP_ON_RECREATE_ENTITIES)
 
         self.WearOwner = nil
 
@@ -171,6 +174,7 @@ end
             if data.ModelSubMaterials then
                 for k,v in pairs(data.ModelSubMaterials) do
                     local id = model:GetSubMaterialIdByName(k)
+                    if !id then continue end
                     model:SetSubMaterial(id, v)
                 end
             end
